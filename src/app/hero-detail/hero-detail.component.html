@@ -4,10 +4,15 @@
     <span>id: </span>
     {{ hero.id }}
   </div>
-  <div>
+  <!-- <div>
     <label for="name">Hero name: </label>
     <input type="text" id="name" [(ngModel)]="hero.name" placeholder="name" />
-  </div>
-  <button (click)="save()">save</button>
+  </div> -->
+  <app-hero-form
+    [model]="hero"
+    [isDetail]="true"
+    (notifySave)="save()"
+  ></app-hero-form>
+  <!-- <button (click)="save()">save</button> -->
   <button (click)="goBack()">go back</button>
 </div>
