@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-form',
@@ -29,7 +30,11 @@ export class HeroFormComponent implements OnInit {
     this.submitted = true;
   }
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit(): void {}
+
+  goBack(): void {
+    this.location.back();
+  }
 }
