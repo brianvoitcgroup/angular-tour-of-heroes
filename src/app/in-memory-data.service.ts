@@ -19,6 +19,9 @@ export class InMemoryDataService implements InMemoryDbService {
   genId(heroes: Hero[]): number {
     return (
       heroes.reduce((a: number, cur: Hero): number => {
+        if (!cur.id) {
+          return 0;
+        }
         return a > cur.id ? a : cur.id;
       }, 0) + 1
     );

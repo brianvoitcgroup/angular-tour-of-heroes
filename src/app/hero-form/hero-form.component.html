@@ -1,39 +1,37 @@
 <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="name">Name: </label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      required
-      [(ngModel)]="model.name"
-      name="name"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="alterEgo">Alter Ego: </label>
-    <input
-      type="text"
-      class="form-control"
-      id="alterEgo"
-      [(ngModel)]="model.alterEgo"
-      name="alterEgo"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="power">Hero Power: </label>
-    <select
-      class="form-control"
-      id="power"
-      required
-      [(ngModel)]="model.power"
-      name="power"
-    >
-      <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
-    </select>
-  </div>
+  <table>
+    <tr>
+      <td><label for="name">Name: </label></td>
+      <td>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="model.name"
+          name="name"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td><label for="alterEgo">Alter Ego: </label></td>
+      <td>
+        <input
+          type="text"
+          id="alterEgo"
+          [(ngModel)]="model.alterEgo"
+          name="alterEgo"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td><label for="power">Hero Power: </label></td>
+      <td>
+        <select id="power" required [(ngModel)]="model.power" name="power">
+          <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
 
   <div *ngIf="!isDetail">
     <button
